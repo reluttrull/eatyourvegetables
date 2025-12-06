@@ -1,2 +1,8 @@
+<h2>Search for a food...</h2>
 <input type="text" title="searchbox" [formControl]="searchControl">
-<p>{{ apiSearchUrl() }}</p>
+<p>{{ apiQuery() }}</p>
+<ul>
+    @for (foodSearchResult of searchResults.foods; track foodSearchResult.fdcId) {
+        <li>{{ foodSearchResult.description }}</li>
+    }
+</ul>
